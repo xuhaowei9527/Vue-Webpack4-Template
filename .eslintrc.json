@@ -1,0 +1,29 @@
+{
+  "parser": "vue-eslint-parser",
+  "extends": [
+    "standard",
+    "plugin:vue/essential",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "vue"
+  ],
+  "parserOptions": {
+      "parser": "babel-eslint",
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "experimentalObjectRestSpread": true
+      }
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    // allow async-await
+    "generator-star-spacing": "off"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  }
+}
