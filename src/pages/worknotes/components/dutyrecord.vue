@@ -1,5 +1,8 @@
 <template>
   <div class="dutyrecord_page">
+    <x-input></x-input>
+    <x-input></x-input>
+    <el-input v-model="test"></el-input>
     <base-dialog
       :message="'是否保存当前值班记录'"
       @toggle="toggle"
@@ -150,11 +153,13 @@ import BaseTable from "../../../components/table/baseshifttable";
 import BaseDialog from "../../../components/dialog/basedialog";
 import { dutyMixins } from "../mixins/dutyrecord";
 import { mapState, mapActions } from "vuex";
+// const a = import("../../vehicle_parts/components/XInput.js");
 export default {
   name: "",
   mixins: [dutyMixins],
   data() {
     return {
+      test: "111111",
       orgList: [],
       activeNames: [],
       workShiftList: [],
@@ -175,7 +180,8 @@ export default {
   },
   components: {
     BaseTable,
-    BaseDialog
+    BaseDialog,
+    "x-input": () => import("../../vehicle_parts/components/XInput.js")
   },
   mounted() {
     // 获取缓存中的orglist
