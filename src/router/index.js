@@ -127,7 +127,13 @@ export default new VueRouter({
           children: [
             {
               path: "AbnormalCar",
-              component: Register.AbnoramlCarPage
+              component: Register.AbnoramlCarPage,
+              children: [
+                {
+                  path: "AbnormalCar",
+                  component: Register.AbnoramlCarPage
+                }
+              ]
             },
             {
               path: "BulkyCar",

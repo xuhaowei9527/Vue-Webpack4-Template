@@ -35,14 +35,28 @@ const stationMenu = [
     child: [
       {
         title: "非正常车辆记录",
-        routekey: "MainLayout/Vehicle/AbnormalCar"
+        hasChild: true,
+        routekey: "MainLayout/Vehicle/AbnormalCar",
+        iconClass: "el-icon-printer",
+        child: [
+          {
+            title: "纠正车型",
+            hasChild: false,
+            routekey: "MainLayout/Vehicle/AbnormalCar",
+            iconClass: "el-icon-printer"
+          }
+        ]
       },
       {
         title: "大件车辆记录",
+        hasChild: false,
+        iconClass: "el-icon-printer",
         routekey: "MainLayout/Vehicle/BulkyCar"
       },
       {
         title: "免费车辆记录",
+        hasChild: false,
+        iconClass: "el-icon-printer",
         routekey: "MainLayout/Vehicle/FreeCar"
       }
     ]

@@ -1,8 +1,5 @@
 <template>
   <div class="dutyrecord_page">
-    <x-input></x-input>
-    <x-input></x-input>
-    <el-input v-model="test"></el-input>
     <base-dialog
       :message="'是否保存当前值班记录'"
       @toggle="toggle"
@@ -180,8 +177,7 @@ export default {
   },
   components: {
     BaseTable,
-    BaseDialog,
-    "x-input": () => import("../../vehicle_parts/components/XInput.js")
+    BaseDialog
   },
   mounted() {
     // 获取缓存中的orglist

@@ -368,7 +368,7 @@ export default {
         certificate: "",
         payment: "",
         dispayment: "",
-        lanetype: ""
+        lanetype: "出口"
       },
       dialogVisible: false,
       centerDialogVisible: false

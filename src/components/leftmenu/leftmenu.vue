@@ -12,28 +12,51 @@
       @select="handleMenuItemClick"
       unique-opened
     >
-      <template v-for="menuItem in menus">
-        <template v-if="menuItem.hasChild == false">
-          <el-menu-item
-            v-bind:index="menuItem.routekey"
-            :key="menuItem.routekey"
-          >
-            <i v-bind:class="[menuItem.iconClass]"></i>
-            <span slot="title"> {{ menuItem.title }}</span>
+      <template v-for="level_1 in menus">
+        <template v-if="level_1.hasChild == false">
+          <el-menu-item v-bind:index="level_1.routekey" :key="level_1.routekey">
+            <i v-bind:class="[level_1.iconClass]"></i>
+            <span slot="title"> {{ level_1.title }}</span>
           </el-menu-item>
         </template>
         <template v-else>
-          <el-submenu v-bind:index="menuItem.routekey" :key="menuItem.routekey">
+          <el-submenu v-bind:index="level_1.routekey" :key="level_1.routekey">
             <template slot="title">
-              <i v-bind:class="[menuItem.iconClass]"></i>
-              <span>{{ menuItem.title }}</span>
+              <i v-bind:class="[level_1.iconClass]"></i>
+              <span>{{ level_1.title }}</span>
             </template>
-            <template v-for="subItem in menuItem.child">
-              <el-menu-item
-                v-bind:index="subItem.routekey"
-                :key="subItem.routekey"
-                >{{ subItem.title }}</el-menu-item
-              >
+            <template v-for="level_2 in level_1.child">
+              <template v-if="level_2.hasChild == false">
+                <el-menu-item
+                  v-bind:index="level_2.routekey"
+                  :key="level_2.routekey"
+                >
+                  <i v-bind:class="[level_2.iconClass]"></i>
+                  <span slot="title"> {{ level_2.title }}</span>
+                </el-menu-item>
+              </template>
+              <template v-else>
+                <el-submenu
+                  v-bind:index="level_2.routekey"
+                  :key="level_2.routekey"
+                >
+                  <template slot="title">
+                    <i v-bind:class="[level_2.iconClass]"></i>
+                    <span>{{ level_2.title }}</span>
+                  </template>
+                  <template v-for="level_3 in level_2.child">
+                    <template v-if="level_3.hasChild == false">
+                      <el-menu-item
+                        v-bind:index="level_3.routekey"
+                        :key="level_3.routekey"
+                      >
+                        <i v-bind:class="[level_3.iconClass]"></i>
+                        <span slot="title"> {{ level_3.title }}</span>
+                      </el-menu-item>
+                    </template>
+                  </template>
+                </el-submenu>
+              </template>
             </template>
           </el-submenu>
         </template>
@@ -85,7 +108,7 @@ export default {
 
 <style scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
+  width: 250px;
 }
 .left_menu_section {
   position: relative;

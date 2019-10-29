@@ -4,7 +4,7 @@
       <header-nav></header-nav>
     </div>
     <el-container>
-      <el-aside id="sc" width="200px">
+      <el-aside id="sc" width="250px">
         <i :class="i_name + ' i_position'" @click="showMenu"></i>
         <left-menu :isCollapse="isCollapse" :menus="menus"></left-menu>
       </el-aside>
