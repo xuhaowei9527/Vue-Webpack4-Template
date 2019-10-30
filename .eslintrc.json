@@ -2,7 +2,8 @@
   "parser": "vue-eslint-parser",
   "extends": [
     "standard",
-    "plugin:vue/essential",
+    // "plugin:vue/recommended",
+    // "plugin:vue/essential",
     "plugin:prettier/recommended"
   ],
   "plugins": [

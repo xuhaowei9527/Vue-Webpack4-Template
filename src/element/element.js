@@ -28,7 +28,9 @@ import {
   Pagination,
   Image,
   Collapse,
-  CollapseItem
+  CollapseItem,
+  TabPane,
+  Tabs
 } from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 // 容器
@@ -71,3 +73,6 @@ Vue.use(Image);
 
 Vue.use(Collapse);
 Vue.use(CollapseItem);
+
+Vue.use(TabPane);
+Vue.use(Tabs);

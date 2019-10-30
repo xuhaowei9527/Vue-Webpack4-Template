@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Register from "./register";
-// import store from '../store/index'
+
 Vue.use(VueRouter);
 const childConfig = [
   {
@@ -64,10 +64,7 @@ childConfig.forEach(i => {
     }
   });
 });
-
-export default new VueRouter({
-  mode: "history",
-  // base: "/PaperLess/",
+const baseConfig = {
   routes: [
     {
       path: "/",
@@ -126,14 +123,8 @@ export default new VueRouter({
           component: Register.VehicleLayoutPage,
           children: [
             {
-              path: "AbnormalCar",
-              component: Register.AbnoramlCarPage,
-              children: [
-                {
-                  path: "AbnormalCar",
-                  component: Register.AbnoramlCarPage
-                }
-              ]
+              path: "AbnormalCarLayer",
+              component: Register.AbnormalCarLayer
             },
             {
               path: "BulkyCar",
@@ -167,4 +158,6 @@ export default new VueRouter({
       ]
     }
   ]
-});
+};
+
+export default new VueRouter(baseConfig);

@@ -47,6 +47,7 @@ const AbnoramlCarPage = () =>
   import(
     /* webpackChunkName: "Vehicle" */ "@/pages/vehicle/components/abnormalcar.vue"
   );
+
 const FreeCarPage = () =>
   import(
     /* webpackChunkName: "Vehicle" */ "@/pages/vehicle/components/freecar.vue"
@@ -54,6 +55,10 @@ const FreeCarPage = () =>
 const BulkyCarPage = () =>
   import(
     /* webpackChunkName: "Vehicle" */ "@/pages/vehicle/components/bulkycar.vue"
+  );
+const AbnormalCarLayer = () =>
+  import(
+    /* webpackChunkName: "Vehicle" */ "@/pages/vehicle/layer/abnormalcarlayer.vue"
   );
 
 // 报表打印
@@ -140,6 +145,7 @@ export default {
   TollDisciplinePage,
   TollerLanePage,
   VehicleLayoutPage,
+  AbnormalCarLayer,
   AbnoramlCarPage,
   FreeCarPage,
   BulkyCarPage,

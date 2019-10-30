@@ -5,6 +5,15 @@ const config = require("../config");
 function resolve(dir) {
   return path.join(__dirname, "..", dir);
 }
+// 开发生产环境为路由添加设置
+// //
+// if (process.env.NODE_ENV !== "development") {
+//   baseConfig = Object.assign(baseConfig, {
+//     mode: "history"
+//     // base: "/PaperLess/"
+//   });
+// }
+
 module.exports = {
   context: path.resolve(__dirname, "../"), // 获取基础路径 d:\TrafficOa
   entry: {
