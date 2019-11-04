@@ -13,9 +13,9 @@ import PatrolNotes from "./modules/worknotes/patrolnotes";
 import TollDiscipline from "./modules/worknotes/tolldiscipline";
 
 import AbnormalCar from "./modules/vechile/abnormalcar";
+import Tabs from "./modules/vechile/abnormalcar/index";
 import BulkyCar from "./modules/vechile/bulkycar";
 import FreeCar from "./modules/vechile/freecar";
-
 import UserManagement from "./modules/settings/usermanagement";
 
 import AbnormalCarReport from "./modules/report/abnormalcarreport";
@@ -31,7 +31,6 @@ import LeaveRecordReport from "./modules/report/leaverecordreport";
 import PotralNotesReport from "./modules/report/potralnotesreport";
 import VehicleDetailsReport from "./modules/report/vehicledetailsreport";
 import VideoTranrecReport from "./modules/report/videotranrecreport";
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -62,6 +61,7 @@ export default new Vuex.Store({
     LeaveRecordReport,
     PotralNotesReport,
     VehicleDetailsReport,
-    VideoTranrecReport
+    VideoTranrecReport,
+    Tabs: Tabs.tabs
   }
 });

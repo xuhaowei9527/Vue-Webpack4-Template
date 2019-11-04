@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    超时车
+    <index-form></index-form>
   </div>
 </template>
 
@@ -10,7 +10,10 @@ export default {
   data() {
     return {};
   },
-  components: {}
+  components: {
+    IndexForm: () => import(/* webpackChunkName: "Vehicle" */ "../form/index")
+  },
+  computed: {}
 };
 </script>
 

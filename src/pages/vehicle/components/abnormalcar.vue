@@ -16,8 +16,7 @@
       @confirm="confirm"
       :dialogVisible="dialogVisible"
     ></base-dialog>
-    <div slot="header" class="clearfix">
-      <span>非正常车信息记录</span>
+    <div slot="header" class="header_btn">
       <el-button @click="save" style="float: right; padding: 3px 0" type="text"
         >{{ commitData.label }}按钮</el-button
       >
@@ -692,5 +691,10 @@ export default {
 .el-date-editor.el-input,
 .el-date-editor.el-input__inner {
   width: 100%;
+}
+.header_btn {
+  display: inline-block;
+  width: 100%;
+  height: 20px;
 }
 </style>

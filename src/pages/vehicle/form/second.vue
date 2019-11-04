@@ -1,12 +1,10 @@
 <template>
-  <div class="">
-    丢轴
-  </div>
+  <div class=""></div>
 </template>
 
 <script>
 export default {
-  name: "LoseAxisType",
+  name: "",
   data() {
     return {};
   },

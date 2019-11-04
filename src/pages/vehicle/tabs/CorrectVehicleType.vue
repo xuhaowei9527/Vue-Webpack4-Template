@@ -1,16 +1,19 @@
 <template>
   <div class="">
-    纠正车型
+    <index-form></index-form>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CorrectVehicleType",
+  name: "",
   data() {
     return {};
   },
-  components: {}
+  components: {
+    IndexForm: () => import(/* webpackChunkName: "Vehicle" */ "../form/index")
+  },
+  computed: {}
 };
 </script>
 

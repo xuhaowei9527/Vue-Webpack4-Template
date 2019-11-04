@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    复称
+    <index-form></index-form>
   </div>
 </template>
 
@@ -10,7 +10,9 @@ export default {
   data() {
     return {};
   },
-  components: {}
+  components: {
+    IndexForm: () => import(/* webpackChunkName: "Vehicle" */ "../form/index")
+  }
 };
 </script>
 

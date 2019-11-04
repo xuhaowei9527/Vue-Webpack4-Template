@@ -1,19 +1,16 @@
 <template>
-  <el-tabs
-    v-model="currentActiveName"
-    type="border-card"
-    @tab-click="handleClick"
-  >
+  <el-tabs v-model="currentActiveName" @tab-click="handleClick">
     <el-tab-pane
       v-for="(item, index) in labelArray"
       :key="index"
       :label="item.label"
       :name="item.name"
-      ><slot></slot>
+    >
     </el-tab-pane>
   </el-tabs>
 </template>
 <script>
+// type="border-card"
 export default {
   props: {
     labelArray: {
@@ -27,9 +24,7 @@ export default {
       default: ""
     }
   },
-  mounted() {
-    console.log(this.currentActiveName);
-  },
+  mounted() {},
   data() {
     return {
       currentActiveName: ""
