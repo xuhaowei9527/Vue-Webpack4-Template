@@ -85,13 +85,13 @@ const webpackConfig = merge(baseWebpackConfig, {
         eutils: {
           test: /exceljs[\\/]dist[\\/]es5[\\/]utils/,
           chunks: "all",
-          name: "eutils",
+          name: "vuex_vuerouter",
           enforce: true
         },
         ecsv: {
           test: /exceljs[\\/]dist[\\/]es5[\\/]csv/,
           chunks: "all",
-          name: "ecsv",
+          name: "vuex_vuerouter",
           enforce: true
         },
         elementcommon: {
@@ -127,13 +127,13 @@ const webpackConfig = merge(baseWebpackConfig, {
         vuex: {
           test: /vuex.esm.js/,
           chunks: "all",
-          name: "vuex",
+          name: "vuex_vuerouter",
           enforce: true
         },
         vuerouter: {
           test: /vue-router.esm.js/,
           chunks: "all",
-          name: "vuerouter",
+          name: "vuex_vuerouter",
           enforce: true
         },
         coo: {

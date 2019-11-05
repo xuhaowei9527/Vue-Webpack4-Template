@@ -346,11 +346,11 @@ export default {
       this.exitFilterStationList = this.stationList;
     },
     changeSize(e) {
-      this.setCurPage(e);
+      this.setSize(e);
       this.getFreeCarList();
     },
     changeCurPage(e) {
-      this.setSize(e);
+      this.setCurPage(e);
       this.getFreeCarList();
     },
     ...mapActions({

@@ -92,6 +92,7 @@ const FormArr = FormatArray(config, TransferName);
 const ReadCardType = {
   namespaced: true,
   state: {
+    name: "已读卡",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -121,6 +122,7 @@ const ReadCardType = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

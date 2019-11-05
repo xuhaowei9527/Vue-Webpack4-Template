@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <base-dialog
-      :message="'是否' + commitData.label + '纠正车型信息记录'"
+      :message="'是否' + commitData.label + curPageName + '信息记录'"
       @toggle="toggle"
       @confirm="confirm"
       :dialogVisible="dialogVisible"
@@ -76,6 +76,12 @@
           @setVehicletypeid="setVehicletypeid"
         ></vehicle-type-snipet>
       </template>
+      <template v-slot:vehicledescid>
+        <vehicle-desc-snipet
+          :value="currentComponentsData.vehicledescid"
+          @setVehicledescid="setVehicledescid"
+        ></vehicle-desc-snipet>
+      </template>
       <template v-slot:vehicleweight>
         <input-snipet
           :hasicon="true"
@@ -141,7 +147,7 @@
         ></handledesc-snipet>
       </template>
     </layout-snipet>
-    <el-collapse>
+    <el-collapse v-model="TableToggle">
       <el-collapse-item name="1">
         <template slot="title">
           <div style="font-size: 16px;">数据列表</div>
@@ -179,6 +185,7 @@ export default {
         data: {},
         label: "添加"
       },
+      TableToggle: "1",
       dialogVisible: false,
       enterStation: {},
       exitStation: {},
@@ -188,6 +195,7 @@ export default {
         jkorgid: "",
         platenumber: "",
         vehicletypeid: "",
+        vehicledescid: "",
         laneid: "",
         tollid: "",
         vehicleweight: "",
@@ -216,6 +224,10 @@ export default {
     this.getVehicleList();
   },
   computed: {
+    curPageName: function() {
+      return this.$store.state.Tabs[this.$options.parent.$options._componentTag]
+        .name;
+    },
     // 根据命名空间获取vuex中state变量
     FormArr: function() {
       return this.$store.state.Tabs[this.$options.parent.$options._componentTag]
@@ -294,6 +306,10 @@ export default {
       import(
         /* webpackChunkName: "Vehicle" */ "../codesnipet/vehicletypesnipet"
       ),
+    VehicleDescSnipet: () =>
+      import(
+        /* webpackChunkName: "Vehicle" */ "../codesnipet/vehicledescsnipet"
+      ),
     FlagSnipet: () =>
       import(/* webpackChunkName: "Vehicle" */ "../codesnipet/flagsnipet"),
     HandledescSnipet: () =>
@@ -327,7 +343,7 @@ export default {
     },
     // 设置当前页
     setVehiclePage(e) {
-      return this.this.$store.commit(
+      return this.$store.commit(
         "Tabs/" +
           this.$options.parent.$options._componentTag +
           "/setVehiclePage",
@@ -336,7 +352,7 @@ export default {
     },
     // 设置当前页码
     setVehicleSize(e) {
-      return this.this.$store.commit(
+      return this.$store.commit(
         "Tabs/" +
           this.$options.parent.$options._componentTag +
           "/setVehicleSize",
@@ -410,6 +426,10 @@ export default {
     // 设置车型
     setVehicletypeid(e) {
       this.currentComponentsData.vehicletypeid = e;
+    },
+    // 设置车种
+    setVehicledescid(e) {
+      this.currentComponentsData.vehicledescid = e;
     },
     // 设置实际车重
     setVehicleweight(e) {
@@ -492,6 +512,14 @@ export default {
             "/setVehicleData",
           val
         );
+      },
+      immediate: true,
+      deep: true
+    },
+    VehicleList: {
+      handler: function(val) {
+        this.TableToggle = "";
+        this.TableToggle = "1";
       },
       immediate: true,
       deep: true

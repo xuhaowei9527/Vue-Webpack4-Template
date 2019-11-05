@@ -92,6 +92,7 @@ const FormArr = FormatArray(config, TransferName);
 const RepetitionType = {
   namespaced: true,
   state: {
+    name: "复称",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -121,6 +122,7 @@ const RepetitionType = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

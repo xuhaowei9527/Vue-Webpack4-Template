@@ -98,6 +98,7 @@ const FormArr = FormatArray(config, TransferName);
 const OvertimeVehicle = {
   namespaced: true,
   state: {
+    name: "超时",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -127,6 +128,7 @@ const OvertimeVehicle = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

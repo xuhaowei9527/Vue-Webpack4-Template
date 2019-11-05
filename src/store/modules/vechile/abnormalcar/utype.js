@@ -98,6 +98,7 @@ const FormArr = FormatArray(config, TransferName);
 const UType = {
   namespaced: true,
   state: {
+    name: "U型车",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -108,7 +109,7 @@ const UType = {
     defaultVehicleValue: {
       impropertypeid: "8",
       vehicletypeid: "11",
-      payment: 0,
+      payment: "0",
       handledesc: "理由",
       jcflag: "1"
     },
@@ -128,6 +129,7 @@ const UType = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

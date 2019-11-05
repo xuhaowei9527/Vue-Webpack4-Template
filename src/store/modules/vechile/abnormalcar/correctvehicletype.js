@@ -20,6 +20,11 @@ const TableHeader = [
   },
   {
     propkey: "vehicletypedesc",
+    proplabel: "车型",
+    wh: "90"
+  },
+  {
+    propkey: "cartrucktype",
     proplabel: "车种",
     wh: "90"
   },
@@ -108,6 +113,7 @@ const TransferName = [
   "enterroad",
   "enterorgan",
   "vehicletypeid",
+  "vehicledescid",
   "revpayment",
   "payment",
   "afterpayment",
@@ -122,6 +128,7 @@ const FormArr = FormatArray(config, TransferName);
 const CorrectVehicleType = {
   namespaced: true,
   state: {
+    name: "纠正车型",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -132,7 +139,8 @@ const CorrectVehicleType = {
     defaultVehicleValue: {
       impropertypeid: "11",
       vehicletypeid: "11",
-      handledesc: " 该",
+      vehicledescid: "2",
+      handledesc: " 改",
       jcflag: "1"
     },
     VehicleList: [],
@@ -151,6 +159,7 @@ const CorrectVehicleType = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

@@ -98,6 +98,7 @@ const FormArr = FormatArray(config, TransferName);
 const TrailerType = {
   namespaced: true,
   state: {
+    name: "拖车/被拖车",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -127,6 +128,7 @@ const TrailerType = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

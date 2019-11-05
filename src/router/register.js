@@ -78,43 +78,43 @@ const ChangeShiftReport = () =>
   );
 const CheckChargeReport = () =>
   import(
-    /* webpackChunkName: "Report2" */ "@/pages/report/components/checkchargereport.vue"
+    /* webpackChunkName: "Report1" */ "@/pages/report/components/checkchargereport.vue"
   );
 const ComplaintReport = () =>
   import(
-    /* webpackChunkName: "Report2" */ "@/pages/report/components/complaintreport.vue"
+    /* webpackChunkName: "Report1" */ "@/pages/report/components/complaintreport.vue"
   );
 const DutyRecordReport = () =>
   import(
-    /* webpackChunkName: "Report2" */ "@/pages/report/components/dutyrecordreport.vue"
+    /* webpackChunkName: "Report1" */ "@/pages/report/components/dutyrecordreport.vue"
   );
 const FreeCarReport = () =>
   import(
-    /* webpackChunkName: "Report2" */ "@/pages/report/components/freecarreport.vue"
+    /* webpackChunkName: "Report1" */ "@/pages/report/components/freecarreport.vue"
   );
 const LeaveRecordReport = () =>
   import(
-    /* webpackChunkName: "Report3" */ "@/pages/report/components/leaverecordreport.vue"
+    /* webpackChunkName: "Report2" */ "@/pages/report/components/leaverecordreport.vue"
   );
 const PotralNotesReport = () =>
   import(
-    /* webpackChunkName: "Report3" */ "@/pages/report/components/patrolnotesreport.vue"
+    /* webpackChunkName: "Report2" */ "@/pages/report/components/patrolnotesreport.vue"
   );
 const VehicleDetailsReport = () =>
   import(
-    /* webpackChunkName: "Report3" */ "@/pages/report/components/vehicledetailsreport.vue"
+    /* webpackChunkName: "Report2" */ "@/pages/report/components/vehicledetailsreport.vue"
   );
 const VideoTranrecReport = () =>
   import(
-    /* webpackChunkName: "Report3" */ "@/pages/report/components/videotranrecreport.vue"
+    /* webpackChunkName: "Report2" */ "@/pages/report/components/videotranrecreport.vue"
   );
 const CorrectVehicleReport = () =>
   import(
-    /* webpackChunkName: "Report4" */ "@/pages/report/components/correctvehiclereport.vue"
+    /* webpackChunkName: "Report2" */ "@/pages/report/components/correctvehiclereport.vue"
   );
 const CorrectVehicleTotalReport = () =>
   import(
-    /* webpackChunkName: "Report4" */ "@/pages/report/components/correctvehicletotalreport.vue"
+    /* webpackChunkName: "Report2" */ "@/pages/report/components/correctvehicletotalreport.vue"
   );
 const LoginPage = () =>
   import(/* webpackChunkName: "Login" */ "@/pages/login/login.vue");

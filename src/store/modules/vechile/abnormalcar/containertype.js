@@ -93,6 +93,7 @@ console.log(FormArr);
 const ContainerType = {
   namespaced: true,
   state: {
+    name: "集装箱",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -122,6 +123,7 @@ const ContainerType = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

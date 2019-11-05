@@ -534,11 +534,11 @@ export default {
       this.exitFilterStationList = this.stationList;
     },
     changeSize(e) {
-      this.setCurPage(e);
+      this.setSize(e);
       this.getAbnormalCarList();
     },
     changeCurPage(e) {
-      this.setSize(e);
+      this.setCurPage(e);
       this.getAbnormalCarList();
     },
     ...mapActions({

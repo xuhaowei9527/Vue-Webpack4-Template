@@ -443,11 +443,11 @@ export default {
       this.centerDialogVisible = !this.centerDialogVisible;
     },
     changeSize(e) {
-      this.setCurrentPage(e);
+      this.setPageSize(e);
       this.getBulkyCarList();
     },
     changeCurPage(e) {
-      this.setPageSize(e);
+      this.setCurrentPage(e);
       this.getBulkyCarList();
     },
     save() {

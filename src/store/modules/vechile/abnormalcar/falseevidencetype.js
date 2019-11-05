@@ -104,6 +104,7 @@ const FormArr = FormatArray(config, TransferName);
 const FalseEvidenceType = {
   namespaced: true,
   state: {
+    name: "假证",
     FormArr: FormArr,
     TransferName: TransferName,
     url: {
@@ -133,6 +134,7 @@ const FalseEvidenceType = {
       api.post(
         "vehicle/getAbnormalCarList",
         {
+          impropertypeid: state.defaultVehicleValue.impropertypeid,
           currentPage: state.page.currentPage,
           pageSize: state.page.pageSize
         },

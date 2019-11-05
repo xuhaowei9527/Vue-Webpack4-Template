@@ -12,6 +12,7 @@ const config = [
   { label: "入口所属路段", name: "enterroad", hide: false },
   { label: "入口站所属单位", name: "enterorgan", hide: false },
   { label: "车型", name: "vehicletypeid", hide: false },
+  { label: "车种", name: "vehicledescid", hide: false },
   { label: "实际车重", name: "vehicleweight", hide: false },
   { label: "超限比例", name: "overweightratio", hide: false },
   { label: "应缴金额", name: "revpayment", hide: false },

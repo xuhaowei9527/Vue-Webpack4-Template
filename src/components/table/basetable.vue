@@ -1,7 +1,7 @@
 <template>
   <div class="" style="display: block">
     <el-table
-      :data="list"
+      :data="innerList"
       :height="height || '100%'"
       stripe
       style="width: 100%"
@@ -69,7 +69,9 @@ export default {
     }
   },
   data() {
-    return {};
+    return {
+      innerList: []
+    };
   },
   components: {},
   methods: {
@@ -105,6 +107,15 @@ export default {
           return value;
         }
       }
+    }
+  },
+  watch: {
+    list: {
+      handler: function(val) {
+        this.innerList = val;
+      },
+      immediate: true,
+      deep: true
     }
   }
 };
