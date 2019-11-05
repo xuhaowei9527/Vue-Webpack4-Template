@@ -498,6 +498,7 @@ export default {
     this.getTollLaneList();
   },
   activated() {
+    this.getAbnormalCarList();
     // 从缓存中去除stationList
     this.getStationList();
   },

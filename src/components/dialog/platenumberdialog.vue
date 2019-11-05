@@ -70,7 +70,7 @@ export default {
   components: {},
   methods: {
     choice(e) {
-      this.$emit("choice", e.target.innerHTML);
+      this.$emit("choice", e.target.innerHTML.trim());
       this.handleClose();
     },
     handleClose(done) {
