@@ -9,8 +9,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin"); // 替换uglifyjs-webpack-plugin
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // 用于优化或者压缩CSS资源
 const VueLoaderPlugin = require("vue-loader/lib/plugin"); // vue-loader15 后配合使用
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin"); //  打包性能分析
 const devMode = process.env.NODE_ENV !== "production";
 const env = process.env.NODE_ENV === require("../config/prod.env");
+const smp = new SpeedMeasurePlugin();
 
 const webpackConfig = merge(baseWebpackConfig, {
   mode: "production",
@@ -151,7 +153,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       }
     }
   },
-
   plugins: [
     // 每次打包清空dist目录
     new CleanWebpackPlugin(),
@@ -170,6 +171,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         // 一行
         collapseWhitespace: true
       },
+      chunksSortMode: "none",
       hash: true,
       favicon: "./favicon.ico"
     }),
@@ -208,4 +210,4 @@ if (config.build.bundleAnalyzerReport) {
   webpackConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 
-module.exports = webpackConfig;
+module.exports = smp.wrap(webpackConfig);

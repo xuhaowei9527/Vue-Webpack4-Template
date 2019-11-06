@@ -49,6 +49,11 @@ const TableHeader = [
     wh: "90"
   },
   {
+    propkey: "revpayment",
+    proplabel: "应缴金额",
+    wh: "90"
+  },
+  {
     propkey: "payment",
     proplabel: "实缴金额",
     wh: "90"
@@ -92,9 +97,10 @@ const TransferName = [
   "enterstation",
   "enterroad",
   "enterorgan",
+  "vehicletypeid",
+  "revpayment",
   "payment",
   "afterpayment",
-  "vehicletypeid",
   "jcflag",
   "handledesc"
 ];

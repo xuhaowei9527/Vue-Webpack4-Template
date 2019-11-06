@@ -72,6 +72,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         // 一行
         collapseWhitespace: true
       },
+      chunksSortMode: "none",
       hash: true,
       favicon: "./favicon.ico",
       inject: true

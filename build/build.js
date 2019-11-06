@@ -6,7 +6,6 @@ const webpack = require("webpack");
 const webpackConfig = require("./webpack.prod");
 const spinner = ora("生产打包...").start();
 webpack(webpackConfig, (err, stats) => {
-  console.log(stats);
   spinner.stop();
   if (err) throw err;
   process.stdout.write(

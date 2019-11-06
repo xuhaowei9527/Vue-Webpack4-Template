@@ -50,7 +50,7 @@
       <template v-slot:exitdate>
         <datetime-snipet
           :value="currentComponentsData.exitdate"
-          @setValue="setDate"
+          @setValue="setExitDate"
         ></datetime-snipet>
       </template>
       <template v-slot:enterstation>
@@ -69,6 +69,12 @@
         <disable-input-snipet
           :value="enterStation.company"
         ></disable-input-snipet>
+      </template>
+      <template v-slot:enterdate>
+        <datetime-snipet
+          :value="currentComponentsData.enterdate"
+          @setValue="setEnterDate"
+        ></datetime-snipet>
       </template>
       <template v-slot:vehicletypeid>
         <vehicle-type-snipet
@@ -208,6 +214,7 @@ export default {
         enterstation: "",
         exitstation: "",
         exitdate: "",
+        enterdate: "",
         impropertypeid: "",
         handledesc: "",
         jcflag: ""
@@ -420,8 +427,12 @@ export default {
       this.currentComponentsData.enterorgan = e.company;
     },
     // 设置出口时间
-    setDate(e) {
+    setExitDate(e) {
       this.currentComponentsData.exitdate = e;
+    },
+    // 设置入口时间
+    setEnterDate(e) {
+      this.currentComponentsData.enterdate = e;
     },
     // 设置车型
     setVehicletypeid(e) {
@@ -484,11 +495,11 @@ export default {
       Object.keys(this.currentComponentsData).map(
         i => (this.currentComponentsData[i] = "")
       );
+      // 初始化默认的数据
+      this.initOnce();
       // 初始化收费站
       this.$refs.InitExit.init();
       this.$refs.InitEnter.init();
-      // 初始化默认的数据
-      this.initOnce();
     },
     // 确认提交,以及刷新数据
     confirm() {

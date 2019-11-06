@@ -49,6 +49,11 @@ const TableHeader = [
     wh: "120"
   },
   {
+    propkey: "enterdate",
+    proplabel: "入口时间",
+    wh: "120"
+  },
+  {
     propkey: "exitstation",
     proplabel: "出口站",
     wh: "120"
@@ -112,6 +117,7 @@ const TransferName = [
   "enterstation",
   "enterroad",
   "enterorgan",
+  "enterdate",
   "vehicletypeid",
   "vehicledescid",
   "revpayment",

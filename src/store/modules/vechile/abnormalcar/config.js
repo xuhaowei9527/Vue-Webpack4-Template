@@ -11,6 +11,7 @@ const config = [
   { label: "入口站", name: "enterstation", hide: false },
   { label: "入口所属路段", name: "enterroad", hide: false },
   { label: "入口站所属单位", name: "enterorgan", hide: false },
+  { label: "入口时间", name: "enterdate", hide: false },
   { label: "车型", name: "vehicletypeid", hide: false },
   { label: "车种", name: "vehicledescid", hide: false },
   { label: "实际车重", name: "vehicleweight", hide: false },

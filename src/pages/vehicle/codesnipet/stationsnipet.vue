@@ -56,9 +56,17 @@ export default {
     init() {
       if (this.switch) {
         this.Station = this.DefaultOrgname;
+        this.findItem(this.Station);
       } else {
         this.Station = "";
       }
+    },
+    findItem(val) {
+      this.StationList.forEach(item => {
+        if (item.stationname.includes(val)) {
+          this.$emit("setStation", item);
+        }
+      });
     },
     StationFilter(e) {
       this.FilterStationList = [];
@@ -98,11 +106,7 @@ export default {
     Station: {
       handler: function(val) {
         if (val && val.length > 0) {
-          this.StationList.forEach(item => {
-            if (item.stationname.includes(val)) {
-              this.$emit("setStation", item);
-            }
-          });
+          this.findItem(val);
         } else {
           this.$emit("setStation", {});
         }
