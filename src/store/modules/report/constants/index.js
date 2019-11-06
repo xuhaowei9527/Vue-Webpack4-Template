@@ -256,29 +256,14 @@ const bulkyCarReportTableHeader = [
     wh: "120"
   },
   {
-    propkey: "cartrucktype",
-    proplabel: "车型",
-    wh: "90"
-  },
-  {
-    propkey: "vehicletypedesc",
-    proplabel: "车种",
-    wh: "90"
-  },
-  {
     propkey: "enterstation",
     proplabel: "入口站",
     wh: "120"
   },
   {
-    propkey: "enterdate",
-    proplabel: "入口时间",
-    wh: "200"
-  },
-  {
     propkey: "enterroad",
     proplabel: "入口站所属路段",
-    wh: "120"
+    wh: "150"
   },
   {
     propkey: "enterorgan",
@@ -298,7 +283,7 @@ const bulkyCarReportTableHeader = [
   {
     propkey: "exitroad",
     proplabel: "出口站所属路段",
-    wh: "120"
+    wh: "150"
   },
   {
     propkey: "exitorgan",
@@ -326,24 +311,9 @@ const bulkyCarReportTableHeader = [
     wh: "120"
   },
   {
-    propkey: "lanetype",
-    proplabel: "出入口类型",
-    wh: "120"
-  },
-  {
     propkey: "goodsdesc",
     proplabel: "货物名称",
     wh: "120"
-  },
-  {
-    propkey: "tollname",
-    proplabel: "收费员",
-    wh: "90"
-  },
-  {
-    propkey: "lanedesc",
-    proplabel: "车道号",
-    wh: "90"
   },
   {
     propkey: "username",

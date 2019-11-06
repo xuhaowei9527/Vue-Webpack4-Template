@@ -59,42 +59,8 @@
               </el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="6">
-            <el-form-item label="车型">
-              <el-select
-                v-model="bulkyCarFormdata.vehicletypeid"
-                placeholder="请选择"
-              >
-                <el-option
-                  v-for="item in vehicleTypeList"
-                  :key="item.vehicletypeid"
-                  :label="item.vehicletypedesc"
-                  :value="item.vehicletypeid"
-                >
-                </el-option>
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="6">
-            <el-form-item label="车种">
-              <el-select
-                v-model="bulkyCarFormdata.vehicledescid"
-                placeholder="请选择"
-              >
-                <el-option
-                  v-for="item in vehicleDescList"
-                  :key="item.vehicledescid"
-                  :label="item.cartrucktype"
-                  :value="item.vehicledescid"
-                >
-                </el-option>
-              </el-select>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="15">
-          <el-col :span="6">
-            <el-form-item label="申报车重">
+          <el-col :span="6"
+            ><el-form-item label="申报车重">
               <el-input
                 v-model="bulkyCarFormdata.declareweight"
                 placeholder="请输入内容"
@@ -105,8 +71,8 @@
               </el-input>
             </el-form-item>
           </el-col>
-          <el-col :span="6">
-            <el-form-item label="实际车重">
+          <el-col :span="6"
+            ><el-form-item label="实际车重">
               <el-input
                 v-model="bulkyCarFormdata.vehicleweight"
                 placeholder="请输入内容"
@@ -115,80 +81,6 @@
                   KG
                 </template>
               </el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="6">
-            <el-form-item label="收费员">
-              <el-select v-model="bulkyCarFormdata.tollid" placeholder="请选择">
-                <el-option
-                  v-for="item in tollLaneList"
-                  :key="item.tollid"
-                  :label="item.tollname"
-                  :value="item.tollid"
-                >
-                </el-option>
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="6">
-            <el-form-item label="车道号">
-              <el-select v-model="bulkyCarFormdata.laneid" placeholder="请选择">
-                <el-option
-                  v-for="item in tollLaneList"
-                  :key="item.laneid"
-                  :label="item.lanedesc"
-                  :value="item.laneid"
-                >
-                </el-option>
-              </el-select>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="15">
-          <el-col :span="6">
-            <el-form-item label="入口站">
-              <el-select
-                filterable
-                :filter-method="enterStationFilter"
-                v-model="bulkyCarFormdata.enterstation"
-                placeholder="请选择"
-              >
-                <el-option
-                  v-for="item in enterFilterStationList"
-                  :key="item.id"
-                  :label="item.stationname + ' code: ' + item.id"
-                  :value="item.stationname"
-                >
-                </el-option>
-              </el-select>
-            </el-form-item>
-          </el-col>
-          <el-col :span="6">
-            <el-form-item label="入口站所属路段">
-              <el-input
-                v-model="enterStation.roadname"
-                readonly
-                placeholder="请输入内容"
-              ></el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="6">
-            <el-form-item label="入口站所属单位">
-              <el-input
-                v-model="enterStation.company"
-                readonly
-                placeholder="请输入内容"
-              ></el-input>
-            </el-form-item>
-          </el-col>
-          <el-col :span="6">
-            <el-form-item label="入口时间">
-              <el-date-picker
-                v-model="bulkyCarFormdata.enterdate"
-                type="datetime"
-                placeholder="选择日期时间"
-              >
-              </el-date-picker>
             </el-form-item>
           </el-col>
         </el-row>
@@ -242,13 +134,51 @@
         </el-row>
         <el-row :gutter="15">
           <el-col :span="6">
-            <el-form-item label="货物名称">
+            <el-form-item label="入口站">
+              <el-select
+                filterable
+                :filter-method="enterStationFilter"
+                v-model="bulkyCarFormdata.enterstation"
+                placeholder="请选择"
+              >
+                <el-option
+                  v-for="item in enterFilterStationList"
+                  :key="item.id"
+                  :label="item.stationname + ' code: ' + item.id"
+                  :value="item.stationname"
+                >
+                </el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+          <el-col :span="6">
+            <el-form-item label="入口站所属路段">
+              <el-input
+                v-model="enterStation.roadname"
+                readonly
+                placeholder="请输入内容"
+              ></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="6">
+            <el-form-item label="入口站所属单位">
+              <el-input
+                v-model="enterStation.company"
+                readonly
+                placeholder="请输入内容"
+              ></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="6"
+            ><el-form-item label="货物名称">
               <el-input
                 v-model="bulkyCarFormdata.goodsdesc"
                 placeholder="请输入内容"
               ></el-input>
             </el-form-item>
           </el-col>
+        </el-row>
+        <el-row :gutter="15">
           <el-col :span="6">
             <el-form-item label="运输证件号">
               <el-input
@@ -279,19 +209,6 @@
                   元
                 </template>
               </el-input>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="15">
-          <el-col :span="6">
-            <el-form-item label="出入口类型">
-              <el-select
-                v-model="bulkyCarFormdata.lanetype"
-                placeholder="请选择"
-              >
-                <el-option :label="'出口'" :value="'出口'"></el-option>
-                <el-option :label="'入口'" :value="'入口'"></el-option>
-              </el-select>
             </el-form-item>
           </el-col>
         </el-row>
@@ -334,6 +251,7 @@ export default {
   mixins: [vehicleMixins],
   data() {
     return {
+      defaultOrgname: "",
       commitData: {
         methods: "add",
         data: {},
@@ -341,8 +259,6 @@ export default {
       },
       orgList: [],
       activeNames: [],
-      vehicleTypeList: [],
-      vehicleDescList: [],
       enterFilterStationList: [],
       exitFilterStationList: [],
       stationList: [],
@@ -354,21 +270,15 @@ export default {
         id: "",
         jkorgid: "",
         platenumber: "",
-        vehicletypeid: "11",
-        vehicledescid: "2",
         declareweight: "",
         vehicleweight: "",
-        tollid: "",
-        laneid: "",
         enterstation: "",
-        enterdate: "",
         exitstation: "",
         exitdate: "",
         goodsdesc: "",
         certificate: "",
         payment: "",
-        dispayment: "",
-        lanetype: "出口"
+        dispayment: ""
       },
       dialogVisible: false,
       centerDialogVisible: false
@@ -386,13 +296,15 @@ export default {
     this.getOrgList();
     // 设置默认选中站
     this.setOrgDefaultValue();
-    // 车型车种
-    this.getVehicle();
-    // 车道收费员信息
-    this.getTollLaneList();
+    this.getStationList();
+    this.DefaultOrgname = JSON.parse(
+      localStorage.getItem("loginInfo")
+    ).jkorgname;
+    this.init();
   },
   activated() {
-    this.getAbnormalCarList();
+    this.$store.commit("resetPage");
+    this.getBulkyCarList();
     // 从缓存中去除stationList
     this.getStationList();
   },
@@ -401,11 +313,21 @@ export default {
       height: state => state.GlobalState.height,
       bulkyCarTableHeader: state => state.BulkyCar.bulkyCarTableHeader,
       bulkyCarList: state => state.BulkyCar.bulkyCarList,
-      page: state => state.BulkyCar.page,
-      tollLaneList: state => state.TollerLane.tollLaneList
+      page: state => state.BulkyCar.page
     })
   },
   methods: {
+    init() {
+      this.bulkyCarFormdata.exitstation = this.DefaultOrgname;
+      this.findItem(this.bulkyCarFormdata.exitstation);
+    },
+    findItem(val) {
+      this.stationList.forEach(item => {
+        if (item.stationname.includes(val)) {
+          this.exitStation = item;
+        }
+      });
+    },
     getOrgList() {
       this.orgList = JSON.parse(localStorage.getItem("orgList"));
     },
@@ -415,14 +337,6 @@ export default {
       ).jkorgid;
     },
     handleExpand() {},
-    getVehicle() {
-      this.vehicleTypeList = JSON.parse(
-        localStorage.getItem("vehicleTypeList")
-      );
-      this.vehicleDescList = JSON.parse(
-        localStorage.getItem("vehicleDescList")
-      );
-    },
     getStationList() {
       this.stationList = JSON.parse(localStorage.getItem("stationList"));
       this.enterFilterStationList = this.stationList;
@@ -430,7 +344,6 @@ export default {
     },
     ...mapActions({
       getBulkyCarList: "getBulkyCarList",
-      getTollLaneList: "getTollLaneList",
       commitBulkyCarInfo: "commitBulkyCarInfo"
     }),
     ...mapMutations(["setCurPage", "setSize"]),
@@ -485,8 +398,7 @@ export default {
       });
       this.enterStation = {};
       this.exitStation = {};
-      this.bulkyCarFormdata.vehicletypeid = "11";
-      this.bulkyCarFormdata.vehicledescid = "2";
+      this.init();
     },
     confirm() {
       this.bulkyCarFormdata.enterroad = this.enterStation.roadname;
@@ -502,32 +414,6 @@ export default {
     }
   },
   watch: {
-    "bulkyCarFormdata.tollid": {
-      handler: function(val) {
-        if (val) {
-          this.tollLaneList.forEach(item => {
-            if (item.tollid === val) {
-              this.bulkyCarFormdata.laneid = item.laneid;
-            }
-          });
-        }
-      },
-      immediate: true,
-      deep: true
-    },
-    "bulkyCarFormdata.laneid": {
-      handler: function(val) {
-        if (val) {
-          this.tollLaneList.forEach(item => {
-            if (item.laneid === val) {
-              this.bulkyCarFormdata.tollid = item.tollid;
-            }
-          });
-        }
-      },
-      immediate: true,
-      deep: true
-    },
     "bulkyCarFormdata.enterstation": {
       handler: function(val) {
         if (val) {

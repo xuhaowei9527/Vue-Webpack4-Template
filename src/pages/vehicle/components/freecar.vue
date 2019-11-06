@@ -254,6 +254,7 @@ export default {
   mixins: [vehicleMixins],
   data() {
     return {
+      defaultOrgname: "",
       commitData: {
         methods: "add",
         data: {},
@@ -308,9 +309,15 @@ export default {
     this.getVehicle();
     // 车道收费员信息
     this.getTollLaneList();
+    this.getStationList();
+    this.DefaultOrgname = JSON.parse(
+      localStorage.getItem("loginInfo")
+    ).jkorgname;
+    this.init();
   },
   activated() {
-    this.getAbnormalCarList();
+    this.$store.commit("resetPage");
+    this.getFreeCarList();
     // 从缓存中去除stationList
     this.getStationList();
   },
@@ -324,6 +331,17 @@ export default {
     })
   },
   methods: {
+    init() {
+      this.freeCarFormdata.exitstation = this.DefaultOrgname;
+      this.findItem(this.freeCarFormdata.exitstation);
+    },
+    findItem(val) {
+      this.stationList.forEach(item => {
+        if (item.stationname.includes(val)) {
+          this.exitStation = item;
+        }
+      });
+    },
     getOrgList() {
       this.orgList = JSON.parse(localStorage.getItem("orgList"));
     },
@@ -416,6 +434,7 @@ export default {
       this.freetypedesc = "";
       this.freeCarFormdata.vehicletypeid = "11";
       this.freeCarFormdata.vehicledescid = "2";
+      this.init();
     },
     confirm() {
       this.commitData.data = this.freeCarFormdata;

@@ -100,6 +100,13 @@ const mutations = {
   },
   setTotal(state, data) {
     state.page.total = data;
+  },
+  resetPage(state, data) {
+    state.page = {
+      total: 0,
+      pageSize: 10,
+      currentPage: 1
+    };
   }
 };
 

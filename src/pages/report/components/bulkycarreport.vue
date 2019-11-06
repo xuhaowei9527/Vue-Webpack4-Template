@@ -122,7 +122,7 @@ export default {
     print() {
       const dataList = JSON.parse(JSON.stringify(this.bulkyCarReportList));
       /* eslint-disable-next-line */
-      const header = ['大件车运输证号', '车牌号', '车型', '车种', '入口站', '入口所属路段', '入口管理单位', '入口时间',
+      const header = ['大件车运输证号', '车牌号', '入口站', '入口所属路段', '入口管理单位',
         "出口站",
         "出口所属路段",
         "出口管理单位",
@@ -131,10 +131,7 @@ export default {
         "计重吨位",
         "实收金额",
         "减免金额",
-        "出入口类型",
         "货物名称",
-        "收费员",
-        "车道号",
         "记录人员",
         "记录时间",
         "机构"
@@ -142,12 +139,9 @@ export default {
       const columns = [
         { key: "certificate", width: 20 },
         { key: "platenumber", width: 20 },
-        { key: "cartrucktype", width: 15 },
-        { key: "vehicletypedesc", width: 15 },
         { key: "enterstation", width: 20 },
         { key: "enterroad", width: 20 },
         { key: "enterorgan", width: 20 },
-        { key: "enterdate", width: 30 },
         { key: "exitstation", width: 20 },
         { key: "exitroad", width: 20 },
         { key: "exitorgan", width: 20 },
@@ -156,11 +150,8 @@ export default {
         { key: "vehicleweight", width: 15 },
         { key: "payment", width: 15 },
         { key: "dispayment", width: 15 },
-        { key: "lanetype", width: 15 },
         { key: "goodsdesc", width: 15 },
-        { key: "tollname", width: 15 },
-        { key: "lanedesc", width: 15 },
-        { key: "userid", width: 15 },
+        { key: "username", width: 15 },
         { key: "redate", width: 30 },
         { key: "orgname", width: 15 }
       ];
@@ -171,7 +162,7 @@ export default {
         columns,
         "",
         50,
-        "A1:W1"
+        "A1:Q1"
       );
     },
     search() {
