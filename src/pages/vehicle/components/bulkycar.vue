@@ -170,23 +170,15 @@
             </el-form-item>
           </el-col>
           <el-col :span="6"
-            ><el-form-item label="货物名称">
-              <el-input
-                v-model="bulkyCarFormdata.goodsdesc"
-                placeholder="请输入内容"
-              ></el-input>
-            </el-form-item>
-          </el-col>
-        </el-row>
-        <el-row :gutter="15">
-          <el-col :span="6">
-            <el-form-item label="运输证件号">
+            ><el-form-item label="运输证件号">
               <el-input
                 v-model="bulkyCarFormdata.certificate"
                 placeholder="请输入内容"
               ></el-input>
             </el-form-item>
           </el-col>
+        </el-row>
+        <el-row :gutter="15">
           <el-col :span="6">
             <el-form-item label="实缴金额">
               <el-input
@@ -275,7 +267,6 @@ export default {
         enterstation: "",
         exitstation: "",
         exitdate: "",
-        goodsdesc: "",
         certificate: "",
         payment: "",
         dispayment: ""

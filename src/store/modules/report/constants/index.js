@@ -311,11 +311,6 @@ const bulkyCarReportTableHeader = [
     wh: "120"
   },
   {
-    propkey: "goodsdesc",
-    proplabel: "货物名称",
-    wh: "120"
-  },
-  {
     propkey: "username",
     proplabel: "记录人员",
     wh: "120"
@@ -392,7 +387,7 @@ const correctVehicleReportTableHeader = [
   {
     propkey: "redate",
     proplabel: "日期",
-    wh: "120"
+    wh: "200"
   },
   {
     propkey: "platenumber",
@@ -445,13 +440,13 @@ const correctVehicleReportTableHeader = [
     wh: "100"
   },
   {
-    propkey: "payment",
+    propkey: "afterpayment",
     proplabel: "补缴金额(元)",
     wh: "120"
   },
   {
-    propkey: "remark",
-    proplabel: "备注",
+    propkey: "handledesc",
+    proplabel: "处理说明",
     wh: "300"
   },
   {

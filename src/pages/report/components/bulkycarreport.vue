@@ -131,7 +131,6 @@ export default {
         "计重吨位",
         "实收金额",
         "减免金额",
-        "货物名称",
         "记录人员",
         "记录时间",
         "机构"
@@ -150,7 +149,6 @@ export default {
         { key: "vehicleweight", width: 15 },
         { key: "payment", width: 15 },
         { key: "dispayment", width: 15 },
-        { key: "goodsdesc", width: 15 },
         { key: "username", width: 15 },
         { key: "redate", width: 30 },
         { key: "orgname", width: 15 }
@@ -162,7 +160,7 @@ export default {
         columns,
         "",
         50,
-        "A1:Q1"
+        "A1:P1"
       );
     },
     search() {

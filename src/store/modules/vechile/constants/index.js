@@ -249,11 +249,6 @@ const bulkyCarTableHeader = [
     wh: "120"
   },
   {
-    propkey: "goodsdesc",
-    proplabel: "货物名称",
-    wh: "120"
-  },
-  {
     propkey: "username",
     proplabel: "记录人员",
     wh: "120"

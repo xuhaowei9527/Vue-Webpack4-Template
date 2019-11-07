@@ -13,142 +13,125 @@ const header1 = [
   "金额",
   "合计",
   "",
-  "沧黄高速公路",
+  "北三县(207 019)",
   "",
-  "承朝高速公路",
+  "承朝处(162)",
   "",
-  "承赤高速公路",
+  "承赤处(164)",
   "",
-  "承唐高速公路",
+  "承唐承德处(161)",
   "",
-  "大广高速衡大段",
+  "衡大处(005)",
   "",
-  "大广高速京衡段",
+  "京承处(160)",
   "",
-  "邯长高速公路",
+  "京衡处(004)",
   "",
-  "京承高速公路",
+  "京沪处(003)",
   "",
-  "京沪高速公路",
+  "廊诼处(032)",
   "",
-  "京昆高速公路北延段",
+  "青银处(023)",
   "",
-  "廊诼高速公路",
+  "荣乌处(026)",
   "",
-  "密涿高速公路",
+  "石安处(002 031 0240011)",
   "",
-  "青银高速公路",
+  "石黄处(021 028)",
   "",
-  "荣乌高速公路",
+  "邢汾处(027)",
   "",
-  "石安高速公路",
+  "邢衡衡水(006)",
   "",
-  "石黄高速公路",
+  "邢衡邢台(035)",
   "",
-  "邢汾高速公路",
+  "宣大处(121)",
   "",
-  "邢衡高速公路衡水段",
+  "张承承德处(165)",
   "",
-  "邢衡高速公路邢台段",
+  "张承张家口处(125)",
   "",
-  "宣大高速公路",
+  "张涿保定处(007 036)",
   "",
-  "张承高速承德段",
-  "",
-  "张承高速张家口段",
-  "",
-  "张涿高速保定段",
-  "",
-  "张涿高速张家口段"
+  "张涿张家口处(126)"
 ];
 const header2 = [
   "",
   "合计",
   "",
-  "保沧高速公路",
+  "保沧高速(025)",
   "",
-  "保阜高速公路",
+  "保阜高速(034)",
   "",
-  "保津高速公路",
+  "保津高速(022)",
   "",
-  "承秦高速公路",
+  "承秦承德段(163)",
   "",
-  "衡德高速公路",
+  "衡德高速(010)",
   "",
-  "衡德高速公路故城支线",
+  "衡德故城支线(011)",
   "",
-  "京昆高速公路保定段",
+  "京石高速(001)",
   "",
-  "京石高速公路",
+  "京张高速(120)",
   "",
-  "京张高速公路",
+  "曲港高速(038)",
   "",
-  "曲港高速公路",
+  "石太高速(020)",
   "",
-  "石太高速公路",
+  "太行山邯郸(044)",
   "",
-  "太行山高速邯郸段",
+  "太行山京蔚(042)",
   "",
-  "太行山高速京蔚段",
+  "太行山涞曲段(040)",
   "",
-  "太行山高速涞曲段",
+  "太行山西阜保定(041)",
   "",
-  "太行山高速邢台段",
+  "太行山邢台(043)",
   "",
-  "西阜高速保定段",
+  "邢临高速(024)",
   "",
-  "邢临高速公路"
+  "张石保定(013)"
 ];
 const header3 = [
   "",
   "合计",
   "",
-  "丹拉高速公路",
+  "丹拉高速(122)",
   "",
-  "邯大高速公路",
+  "邯大高速(037)",
   "",
-  "津讪高速公路",
+  "津讪高速(008)",
   "",
-  "京化高速公路",
+  "京化高速(124)",
   "",
-  "京昆高速公路石家庄段",
+  "京昆高速石家庄段(012)",
   "",
-  "京昆高速公路石太段",
+  "京昆高速石太段(009)",
   "",
-  "廊沧高速沧州段",
+  "京台高速(017)",
   "",
-  "廊沧高速廊坊段",
+  "廊沧高速沧州段(014)",
   "",
-  "廊沧高速千童段",
+  "廊沧高速廊坊段(015)",
   "",
-  "青红高速公路",
+  "廊沧高速千童段(018)",
   "",
-  "青红高速公路二期",
+  "青红高速(029)",
   "",
-  "太行山高速平赞段",
+  "青红高速二期(030)",
   "",
-  "西柏坡高速公路",
+  "太行山平赞(045)",
   "",
-  "西阜高速石家庄段",
+  "太行山西阜石家庄(039)",
   "",
-  "沿海高速沧州段",
+  "西柏坡高速(033)",
   "",
-  "张石高速一期"
+  "沿海高速沧州段(016)",
+  "",
+  "张石高速一期(123)"
 ];
-const header4 = [
-  "",
-  "合计",
-  "",
-  "二秦高速公路",
-  "",
-  "共享路段2",
-  "",
-  "共享路段3",
-  "",
-  "共享路段4",
-  "",
-  "共享路段5"
-];
+const header4 = ["", "合计", "", "二秦高速(046)", "", "共享路段(096 098 099)"];
 const header5 = ["辆次", "金额"];
 export default function toXlsx(title, dataList) {
   console.log(columns);
@@ -179,7 +162,7 @@ export default function toXlsx(title, dataList) {
     worksheet.state = "visible";
     worksheet.mergeCells(2, 1, 2, 3);
     worksheet.mergeCells(2, 4, 2, 6);
-    worksheet.mergeCells(2, 7, 2, 138);
+    worksheet.mergeCells(2, 7, 2, 128);
     // worksheet.getRow(2).values = header
     // 制定表头
     for (let i = 1; i <= 6; i++) {
@@ -204,7 +187,7 @@ export default function toXlsx(title, dataList) {
       3,
       1 + header1.length + header2.length + header3.length + header4.length
     );
-    for (let j = 7; j <= 138; j = j + 2) {
+    for (let j = 7; j <= 128; j = j + 2) {
       worksheet.mergeCells(4, j, 5, j + 1);
     }
     worksheet.getRow(4).values = [
@@ -231,17 +214,17 @@ export default function toXlsx(title, dataList) {
       };
     });
     worksheet.getCell("A2").value = "时间";
-    worksheet.getCell("D2").value = "出口纠正车型";
+    worksheet.getCell("G2").value = "出口纠正车型";
     worksheet.getCell("D2").value = "入口发卡差错单位";
     worksheet.getCell("G3").value = "局属高速及编码";
-    worksheet.getCell("BE3").value = "交投集团及编码";
-    worksheet.getCell("CO3").value = "市属高速及编码";
-    worksheet.getCell("DW3").value = "其他高速及站代码";
+    worksheet.getCell("AY3").value = "交投集团及编码";
+    worksheet.getCell("CI3").value = "市属高速及编码";
+    worksheet.getCell("DS3").value = "其他高速及站代码";
     for (let m = 0; m < header.length; m++) {
       worksheet.getCell(String.fromCharCode(65 + m) + "3").value = header[m];
     }
     const rowsix = worksheet.getRow(6);
-    for (let a = 7; a <= 138; a = a + 2) {
+    for (let a = 7; a <= 128; a = a + 2) {
       let index = 0;
       header5.forEach(b => {
         rowsix.getCell(a + index).value = b;
@@ -251,6 +234,7 @@ export default function toXlsx(title, dataList) {
     worksheet.columns = columns;
     // 数据列表
     worksheet.addRows(dataList);
+    console.log(worksheet);
     // 标题
     worksheet.getRow(1).values = [title];
     worksheet.getRow(1).height = 22.5;
@@ -265,7 +249,7 @@ export default function toXlsx(title, dataList) {
       }
     });
     // 并单元格
-    worksheet.mergeCells("A1:EH1");
+    worksheet.mergeCells("A1:DX1");
   });
   workbook.xlsx
     .writeBuffer()

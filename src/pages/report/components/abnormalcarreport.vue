@@ -200,7 +200,7 @@ export default {
         { key: "lanedesc", width: 15 },
         { key: "impropertypedesc", width: 15 },
         { key: "handledesc", width: 60 },
-        { key: "userid", width: 15 },
+        { key: "username", width: 15 },
         { key: "redate", width: 30 },
         { key: "orgname", width: 15 }
       ];

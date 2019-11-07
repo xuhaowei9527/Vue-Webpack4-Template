@@ -144,7 +144,6 @@ const baseConfig = {
               path: "UserManagement",
               component: Register.UserManagementPage,
               beforeEnter: function(to, from, next) {
-                console.log(to);
                 next();
               }
             }

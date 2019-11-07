@@ -50,7 +50,7 @@ export default {
     choice(e) {
       this.$emit("choice", {
         id: e.target.dataset.id,
-        label: e.target.innerHTML
+        label: e.target.innerHTML.trim()
       });
       this.handleClose();
     },

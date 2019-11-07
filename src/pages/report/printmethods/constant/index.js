@@ -49,12 +49,6 @@ const columns = [
   { key: "payment119", width: 20 },
   { key: "vehicles120", width: 20 },
   { key: "payment120", width: 20 },
-  { key: "vehicles121", width: 20 },
-  { key: "payment121", width: 20 },
-  { key: "vehicles122", width: 20 },
-  { key: "payment122", width: 20 },
-  { key: "vehicles123", width: 20 },
-  { key: "payment123", width: 20 },
   { key: "vehiclesCount2", width: 20 },
   { key: "vehiclesPayment2", width: 20 },
   { key: "vehicles20", width: 20 },
@@ -125,6 +119,8 @@ const columns = [
   { key: "payment314", width: 20 },
   { key: "vehicles315", width: 20 },
   { key: "payment315", width: 20 },
+  { key: "vehicles316", width: 20 },
+  { key: "payment316", width: 20 },
   { key: "vehiclesCount4", width: 20 },
   { key: "vehiclesPayment4", width: 20 },
   { key: "vehicles40", width: 20 },
@@ -132,11 +128,7 @@ const columns = [
   { key: "vehicles41", width: 20 },
   { key: "payment41", width: 20 },
   { key: "vehicles42", width: 20 },
-  { key: "payment42", width: 20 },
-  { key: "vehicles43", width: 20 },
-  { key: "payment43", width: 20 },
-  { key: "vehicles44", width: 20 },
-  { key: "payment44", width: 20 }
+  { key: "payment42", width: 20 }
 ];
 
 export { columns };

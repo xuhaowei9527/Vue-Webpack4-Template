@@ -140,7 +140,7 @@ export default {
         "车种",
         "逃费方式",
         "补缴金额(元)",
-        "备注",
+        "处理说明",
         "机构"
       ];
       const columns = [
@@ -155,8 +155,8 @@ export default {
         { key: "cartrucktype", width: 20 },
         { key: "vehicletypedesc", width: 20 },
         { key: "impropertypedesc", width: 20 },
-        { key: "payment", width: 20 },
-        { key: "remark", width: 60 },
+        { key: "afterpayment", width: 20 },
+        { key: "handledesc", width: 60 },
         { key: "orgname", width: 20 }
       ];
       toXlsx(
