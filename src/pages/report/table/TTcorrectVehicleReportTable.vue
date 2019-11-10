@@ -2,30 +2,46 @@
   <div class="" style="display: block">
     <el-table :height="height" :data="listByParse" style="width: 100%">
       <el-table-column align="center" label="时间">
-        <el-table-column align="center" prop="year" label="年">
+        <el-table-column align="center" prop="year" label="年" width="70">
         </el-table-column>
-        <el-table-column align="center" prop="month" label="月">
+        <el-table-column align="center" prop="month" label="月" width="50">
         </el-table-column>
-        <el-table-column align="center" prop="day" label="日">
+        <el-table-column align="center" prop="day" label="日" width="50">
         </el-table-column>
       </el-table-column>
       <el-table-column align="center" label="出口纠正车型">
-        <el-table-column align="center" prop="orgname" label="单位">
+        <el-table-column align="center" prop="orgname" label="单位" width="120">
         </el-table-column>
-        <el-table-column prop="vehicleAllCount" label="辆次" align="center">
+        <el-table-column
+          prop="vehicleAllCount"
+          label="辆次"
+          align="center"
+          width="75"
+        >
         </el-table-column>
-        <el-table-column prop="vehicleAllPayment" label="金额" align="center">
+        <el-table-column
+          prop="vehicleAllPayment"
+          label="金额"
+          align="center"
+          width="75"
+        >
         </el-table-column>
       </el-table-column>
       <el-table-column align="center" label="入口发卡差错单位">
         <el-table-column align="center" label="局属高速及编码">
           <el-table-column label="合计">
-            <el-table-column prop="vehiclesCount1" label="辆次" align="center">
+            <el-table-column
+              prop="vehiclesCount1"
+              label="辆次"
+              align="center"
+              width="75"
+            >
             </el-table-column>
             <el-table-column
               prop="vehiclesPayment1"
               label="金额"
               align="center"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
@@ -34,29 +50,38 @@
             :key="index"
             :label="item"
             align="center"
+            width="150"
           >
             <el-table-column
               :prop="'vehicles1' + index"
               label="辆次"
               align="center"
+              width="75"
             >
             </el-table-column>
             <el-table-column
               :prop="'payment1' + index"
               label="金额"
               align="center"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
         </el-table-column>
         <el-table-column align="center" label="交投集团及编码">
           <el-table-column label="合计">
-            <el-table-column prop="vehiclesCount2" label="辆次" align="center">
+            <el-table-column
+              prop="vehiclesCount2"
+              label="辆次"
+              align="center"
+              width="75"
+            >
             </el-table-column>
             <el-table-column
               prop="vehiclesPayment2"
               label="金额"
               align="center"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
@@ -65,29 +90,38 @@
             :key="index"
             :label="item"
             align="center"
+            width="150"
           >
             <el-table-column
               :prop="'vehicles2' + index"
               label="辆次"
               align="center"
+              width="75"
             >
             </el-table-column>
             <el-table-column
               :prop="'payment2' + index"
               align="center"
               label="金额"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
         </el-table-column>
         <el-table-column align="center" label="市属高速及编码">
           <el-table-column label="合计">
-            <el-table-column prop="vehiclesCount3" label="辆次" align="center">
+            <el-table-column
+              prop="vehiclesCount3"
+              label="辆次"
+              align="center"
+              width="75"
+            >
             </el-table-column>
             <el-table-column
               prop="vehiclesPayment3"
               label="金额"
               align="center"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
@@ -96,29 +130,38 @@
             :key="index"
             :label="item"
             align="center"
+            width="150"
           >
             <el-table-column
               :prop="'vehicles3' + index"
               align="center"
               label="辆次"
+              width="75"
             >
             </el-table-column>
             <el-table-column
               :prop="'payment3' + index"
               align="center"
               label="金额"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
         </el-table-column>
         <el-table-column align="center" label="其他高速及编码">
           <el-table-column label="合计">
-            <el-table-column prop="vehiclesCount4" label="辆次" align="center">
+            <el-table-column
+              prop="vehiclesCount4"
+              label="辆次"
+              align="center"
+              width="75"
+            >
             </el-table-column>
             <el-table-column
               prop="vehiclesPayment4"
               label="金额"
               align="center"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
@@ -127,17 +170,20 @@
             :key="index"
             align="center"
             :label="item"
+            width="150"
           >
             <el-table-column
               :prop="'vehicles4' + index"
               label="辆次"
               align="center"
+              width="75"
             >
             </el-table-column>
             <el-table-column
               :prop="'payment4' + index"
               label="金额"
               align="center"
+              width="75"
             >
             </el-table-column>
           </el-table-column>
