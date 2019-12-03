@@ -38,9 +38,7 @@
                 v-model="patrolnotesInit.roomtemp"
                 placeholder="请输入内容"
               >
-                <template slot="append"
-                  >℃</template
-                >
+                <template slot="append">℃</template>
               </el-input>
             </el-form-item>
           </el-col>
@@ -50,9 +48,7 @@
                 v-model="patrolnotesInit.roomhum"
                 placeholder="请输入内容"
               >
-                <template slot="append"
-                  >%RH</template
-                >
+                <template slot="append">%RH</template>
               </el-input>
             </el-form-item>
           </el-col>
