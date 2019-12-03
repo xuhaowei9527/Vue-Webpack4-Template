@@ -1,5 +1,5 @@
 <template>
-  <div class="left_menu_section" :style="'height:' + height + 'px'">
+  <div class="left_menu_section">
     <el-menu
       :default-active="onRoutes"
       class="el-menu-vertical-demo"
@@ -65,7 +65,7 @@
   </div>
 </template>
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapActions } from "vuex";
 export default {
   name: "",
   props: {
@@ -90,10 +90,7 @@ export default {
   computed: {
     onRoutes() {
       return this.$route.path.replace("/", "");
-    },
-    ...mapState({
-      height: state => state.GlobalState.height
-    })
+    }
   },
   methods: {
     ...mapActions({}),
@@ -113,7 +110,7 @@ export default {
 .left_menu_section {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 72px);
   background-color: #303133;
 }
 .left_menu_section ul {

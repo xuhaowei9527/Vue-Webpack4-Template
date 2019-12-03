@@ -67,67 +67,17 @@ export default {
     };
   },
   components: {},
-  mounted() {
-    // 获取机构列表
-    this.getOrgList();
-    // 获取班次列表
-    this.getWorkShiftList();
-    // 获取班组列表
-    this.getWorkGroupList();
-    // 获取所有班组成员
-    // this.getAllUserGrouptByOrgId()
-    // 车型
-    this.getVehicleTypeList();
-    // 车种
-    this.getVehicleDescList();
-    // 收费站列表
-    // this.getStationList()
-    // 获取登录用户列表
-    this.getLoginUserList();
-  },
+  mounted() {},
   computed: {
-    // 计算属性中不能改变data中的变量，放到watch中侦听
-    ...mapState({
-      orgList: state => state.GlobalState.orgList,
-      loginUserList: state => state.GlobalState.loginUserList
-    })
+    ...mapState({})
   },
   methods: {
-    ...mapActions({
-      toLogin: "toLogin",
-      getOrgList: "getOrgList",
-      getWorkShiftList: "getWorkShiftList",
-      getWorkGroupList: "getWorkGroupList",
-      getAllUserGrouptByOrgId: "getAllUserGrouptByOrgId",
-      getVehicleTypeList: "getVehicleTypeList",
-      getVehicleDescList: "getVehicleDescList",
-      getStationList: "getStationList",
-      getLoginUserList: "getLoginUserList"
-    }),
+    ...mapActions({}),
     login() {
-      let params = {
-        jkorgid: this.curOrgid,
-        loginid: this.username,
-        password: this.password
-      };
-      this.toLogin(params).then(res => {});
-      params = null;
+      this.$router.push("/MainLayout/TestLayout/TextPage");
     }
   },
-  watch: {
-    orgList: function(newVal, oldVal) {
-      let arr = this.orgList;
-      arr.length > 0 ? (this.curOrgid = arr[0].orgid) : (this.curOrgName = "");
-      arr = null;
-    },
-    username: function(newVal, oldVal) {
-      this.loginUserList.findIndex(item => {
-        if (item.loginid === newVal) {
-          this.curOrgid = item.jkorgid;
-        }
-      });
-    }
-  }
+  watch: {}
 };
 </script>
 

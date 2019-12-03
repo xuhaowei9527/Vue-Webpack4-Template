@@ -3,60 +3,7 @@ import VueRouter from "vue-router";
 import Register from "./register";
 
 Vue.use(VueRouter);
-const childConfig = [
-  {
-    path: "AbnormalCarReport",
-    component: Register.AbnormalCarReport
-  },
-  {
-    path: "BulkyCarReport",
-    component: Register.BulkyCarReport
-  },
-  {
-    path: "ChangeShiftReport",
-    component: Register.ChangeShiftReport
-  },
-  {
-    path: "CheckChargeReport",
-    component: Register.CheckChargeReport
-  },
-  {
-    path: "ComplaintReport",
-    component: Register.ComplaintReport
-  },
-  {
-    path: "DutyRecordReport",
-    component: Register.DutyRecordReport
-  },
-  {
-    path: "FreeCarReport",
-    component: Register.FreeCarReport
-  },
-  {
-    path: "LeaveRecordReport",
-    component: Register.LeaveRecordReport
-  },
-  {
-    path: "PotralNotesReport",
-    component: Register.PotralNotesReport
-  },
-  {
-    path: "VehicleDetailsReport",
-    component: Register.VehicleDetailsReport
-  },
-  {
-    path: "VideoTranrecReport",
-    component: Register.VideoTranrecReport
-  },
-  {
-    path: "CorrectVehicleReport",
-    component: Register.CorrectVehicleReport
-  },
-  {
-    path: "CorrectVehicleTotalReport",
-    component: Register.CorrectVehicleTotalReport
-  }
-];
+const childConfig = [];
 childConfig.forEach(i => {
   Object.assign(i, {
     beforeEnter: function(to, from, next) {
@@ -77,82 +24,14 @@ const baseConfig = {
       component: Register.MainLayoutPage,
       children: [
         {
-          path: "WorkNotes",
-          component: Register.WorkNotesLayoutPage,
+          path: "TestLayout",
+          component: Register.TestLayoutPage,
           children: [
             {
-              path: "DutyRecord",
-              component: Register.DutyRecordPage
-            },
-            {
-              path: "ChangeShift",
-              component: Register.ChangeShiftPage
-            },
-            {
-              path: "ConstructionMaintenance",
-              component: Register.ConstructionMaintenancePage
-            },
-            {
-              path: "VideoDraftRecord",
-              component: Register.VideoDraftRecordPage
-            },
-            {
-              path: "Complaint",
-              component: Register.ComplaintPage
-            },
-            {
-              path: "LeaveRecord",
-              component: Register.LeaveRecordPage
-            },
-            {
-              path: "PatrolNotes",
-              component: Register.PatrolNotesPage
-            },
-            {
-              path: "TollDiscipline",
-              component: Register.TollDisciplinePage
-            },
-            {
-              path: "TollerLane",
-              component: Register.TollerLanePage
+              path: "TextPage",
+              component: Register.TestPage
             }
           ]
-        },
-        {
-          path: "Vehicle",
-          component: Register.VehicleLayoutPage,
-          children: [
-            {
-              path: "AbnormalCarLayer",
-              component: Register.AbnormalCarLayer
-            },
-            {
-              path: "BulkyCar",
-              component: Register.BulkyCarPage
-            },
-            {
-              path: "FreeCar",
-              component: Register.FreeCarPage
-            }
-          ]
-        },
-        {
-          path: "Settings",
-          component: Register.SettingsLayoutPage,
-          children: [
-            {
-              path: "UserManagement",
-              component: Register.UserManagementPage,
-              beforeEnter: function(to, from, next) {
-                next();
-              }
-            }
-          ]
-        },
-        {
-          path: "Report",
-          component: Register.ReportLayoutPage,
-          children: childConfig
         }
       ]
     }
