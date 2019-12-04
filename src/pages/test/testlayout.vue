@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <el-card class="box-card" :style="{ 'min-height': height - 40 + 'px' }">
+  <div class="test-layout">
+    <el-card class="box-card">
       <transition name="fade" mode="out-in">
         <keep-alive>
           <router-view></router-view>
@@ -18,19 +18,22 @@ export default {
     return {};
   },
   computed: {
-    ...mapState({
-      height: state => state.GlobalState.height
-    })
+    ...mapState({})
   },
   components: {}
 };
 </script>
 
 <style scoped>
+.box-card {
+  height: calc(100vh - 112px);
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.01s;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
@@ -39,9 +42,11 @@ export default {
 .bounce-enter-active {
   animation: bounce-in 0.1s;
 }
+
 .bounce-leave-active {
   animation: bounce-in 0.1s reverse;
 }
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);

@@ -8,7 +8,7 @@
         <i :class="i_name + ' i_position'" @click="showMenu"></i>
         <left-menu :isCollapse="isCollapse" :menus="menus"></left-menu>
       </el-aside>
-      <el-main id="sc" :style="'height:' + height + 'px;padding: 19px;'">
+      <el-main id="sc">
         <keep-alive>
           <router-view></router-view>
         </keep-alive>
@@ -25,28 +25,15 @@ export default {
   name: "",
   data() {
     return {
-      total_hgt: 0,
-      left_hgt: 0,
       isCollapse: false,
-      i_name: "el-icon-s-fold",
-      screenHeight: 0
+      i_name: "el-icon-s-fold"
     };
   },
   components: {
     HeaderNav,
     LeftMenu
   },
-  mounted() {
-    const that = this;
-    this.screenHeight = window.innerHeight - 72;
-    window.onresize = () => {
-      return (() => {
-        // window.screenHeight = window.innerHeight
-        // that.screenHeight = window.screenHeight
-        that.screenHeight = window.innerHeight - 72;
-      })();
-    };
-  },
+  mounted() {},
   methods: {
     showMenu() {
       this.isCollapse = !this.isCollapse;
@@ -54,19 +41,11 @@ export default {
     }
   },
   computed: {
-    height: function() {
-      return window.innerHeight;
-    },
     ...mapState({
-      menus: state => state.GlobalState.menus,
-      height: state => state.GlobalState.height
+      menus: state => state.global.menus
     })
   },
-  watch: {
-    screenHeight: function(e) {
-      this.$store.commit("setHeight", e);
-    }
-  }
+  watch: {}
 };
 </script>
 

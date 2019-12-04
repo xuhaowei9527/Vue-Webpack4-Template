@@ -1,16 +1,12 @@
-const state = {};
-
-const getters = {};
-
-// actions
-const actions = {};
-
-// mutations
-const mutations = {};
-
-export default {
-  state,
-  getters,
-  actions,
-  mutations
+import menus from "../../dynamic/index";
+const global = {
+  namespaced: true,
+  state: {
+    menus: menus
+  },
+  getters: {},
+  actions: {},
+  mutations: {}
 };
+
+export default global;

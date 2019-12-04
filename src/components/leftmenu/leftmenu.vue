@@ -84,9 +84,7 @@ export default {
     return {};
   },
   components: {},
-  mounted() {
-    this.$store.dispatch("getMenus");
-  },
+  mounted() {},
   computed: {
     onRoutes() {
       return this.$route.path.replace("/", "");

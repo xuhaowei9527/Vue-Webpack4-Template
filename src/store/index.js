@@ -1,11 +1,13 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import GlobalState from "./modules/global";
-
+import global from "./modules/global";
+import test from "./modules/test/index";
+console.log(global);
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    GlobalState
+    global,
+    test
   }
 });

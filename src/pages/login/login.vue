@@ -1,43 +1,20 @@
 <template>
   <div class="login_bg">
     <div class="login_container">
-      <div class="orgList_position">
-        <i class="el-icon-office-building"></i>
-        <el-select
-          v-model="curOrgid"
-          placeholder="请选择登录机构"
-          style="width: 220px;"
-        >
-          <el-option
-            v-for="item in orgList"
-            :key="item.orgid"
-            :label="item.orgname"
-            :value="item.orgid"
-          >
-          </el-option>
-        </el-select>
-      </div>
       <div class="username_position">
         <i class="el-icon-user"></i>
-        <el-input
-          v-model="username"
-          placeholder="请输入用户名"
-          style="width: 220px;"
-        ></el-input>
+        <el-input placeholder="请输入用户名" style="width: 220px;"></el-input>
       </div>
       <div class="password_position">
         <i class="el-icon-unlock"></i>
         <el-input
-          v-model="password"
           placeholder="请输入密码"
           show-password
           style="width: 220px;"
         ></el-input>
       </div>
       <div class="remember_position">
-        <el-checkbox
-          v-model="remember"
-          style="color: #fff;font-size: 32px;padding-left: 30px;"
+        <el-checkbox style="color: #fff;font-size: 32px;padding-left: 30px;"
           >记住用户名</el-checkbox
         >
       </div>
@@ -59,12 +36,7 @@ import { mapActions, mapState } from "vuex";
 export default {
   name: "",
   data() {
-    return {
-      curOrgid: "",
-      username: "",
-      password: "",
-      remember: false
-    };
+    return {};
   },
   components: {},
   mounted() {},
@@ -74,7 +46,7 @@ export default {
   methods: {
     ...mapActions({}),
     login() {
-      this.$router.push("/MainLayout/TestLayout/TextPage");
+      this.$router.push("/MainLayout/TestLayout/TestPage");
     }
   },
   watch: {}

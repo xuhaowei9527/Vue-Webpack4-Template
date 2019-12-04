@@ -2,17 +2,11 @@
   <div class="header_nav_wrapper">
     <div class="header_logo"></div>
     <div class="header_content">
-      <p class="zh_title">河北邢汾高速公路无纸化办公信息系统</p>
-      <p class="en_title">
-        Paperless Office Information System of Xingfen Expressway in Hebei
-        Province
-      </p>
+      <p class="zh_title">Vue-Webpack4-Template</p>
+      <p class="en_title"></p>
     </div>
     <div class="header_info">
-      <div class="header_info_content">
-        <p>{{ info.jkorgname }}</p>
-        <p>{{ info.username }}</p>
-      </div>
+      <div class="header_info_content"></div>
       <div class="header_logout" @click="loginOut"></div>
     </div>
   </div>
@@ -23,32 +17,16 @@ export default {
   name: "",
   props: {},
   data() {
-    return {
-      info: {}
-    };
+    return {};
   },
   components: {},
-  mounted() {
-    // 3、从本地存储删除某个已保存的数据
-    // localStorage.removeItem('Author');
-    // 4、清除所有保存的数据
-    // localStorage.clear();
-    this.info = JSON.parse(localStorage.getItem("loginInfo"));
-  },
+  mounted() {},
   methods: {
     loginOut() {
       this.$router.push("/");
     }
   },
-  destroyed() {
-    localStorage.removeItem("loginInfo");
-    localStorage.removeItem("orgList");
-    localStorage.removeItem("workShiftList");
-    localStorage.removeItem("workGroupList");
-    localStorage.removeItem("vehicleTypeList");
-    localStorage.removeItem("vehicleDescList");
-    localStorage.removeItem("stationList");
-  }
+  destroyed() {}
 };
 </script>
 

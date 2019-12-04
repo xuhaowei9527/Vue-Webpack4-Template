@@ -3,14 +3,7 @@ import VueRouter from "vue-router";
 import Register from "./register";
 
 Vue.use(VueRouter);
-const childConfig = [];
-childConfig.forEach(i => {
-  Object.assign(i, {
-    beforeEnter: function(to, from, next) {
-      next();
-    }
-  });
-});
+
 const baseConfig = {
   routes: [
     {
@@ -28,7 +21,7 @@ const baseConfig = {
           component: Register.TestLayoutPage,
           children: [
             {
-              path: "TextPage",
+              path: "TestPage",
               component: Register.TestPage
             }
           ]
