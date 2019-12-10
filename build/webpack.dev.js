@@ -4,9 +4,11 @@ const utils = require("./utils");
 const merge = require("webpack-merge");
 const path = require("path");
 const baseWebpackConfig = require("./webpack.base.js");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // 打包出index.html
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin"); // 友好错误提示
 const VueLoaderPlugin = require("vue-loader/lib/plugin"); // vue-loader15 后配合使用
 const portfinder = require("portfinder");
@@ -81,7 +83,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     //   filename: devMode ? "[name].css" : "[name].[hash:7].css",
     //   chunkFilename: devMode ? "[id].css" : "[id].[hash:7].css"
     // }),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new CopyWebpackPlugin([
+      { from: path.join("./static", "model"), to: "model3D" }
+    ])
   ]
 });
 module.exports = new Promise((resolve, reject) => {
