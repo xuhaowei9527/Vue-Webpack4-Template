@@ -98,7 +98,7 @@
     "stats.js": "^0.17.0",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
-    "three": "^0.111.0",
+    "three": "^0.137.0",
     "three-gltf-loader": "^1.110.0",
     "three-orbitcontrols": "^2.110.1",
     "vue": "^2.6.10",
